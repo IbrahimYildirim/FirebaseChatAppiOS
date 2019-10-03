@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -110,7 +110,6 @@
 				2C24693BA5685D7E16604A53 /* Pods-FirebaseChatApp.debug.xcconfig */,
 				194B7992E63FE0F666E1E4DA /* Pods-FirebaseChatApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
