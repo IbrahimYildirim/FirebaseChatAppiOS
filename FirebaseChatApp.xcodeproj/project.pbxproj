@@ -16,6 +16,9 @@
 		0F36161023467D8100EEFCC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F36160F23467D8100EEFCC4 /* GoogleService-Info.plist */; };
 		0F71EE062347682E0052DB25 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EE052347682E0052DB25 /* UIViewController.swift */; };
 		0F71EE0823476E310052DB25 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EE0723476E310052DB25 /* FirebaseHelper.swift */; };
+		0F71EE0B234773040052DB25 /* NewMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EE0A234773040052DB25 /* NewMessageViewController.swift */; };
+		0F7F6C712347868500AB8A69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F6C702347868500AB8A69 /* User.swift */; };
+		0F7F6C7523478DB200AB8A69 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F6C7423478DB200AB8A69 /* ChatViewController.swift */; };
 		28BF37869C2646DCE692B958 /* Pods_FirebaseChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5E54FB49EE57244F1DE497 /* Pods_FirebaseChatApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +34,9 @@
 		0F36160F23467D8100EEFCC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0F71EE052347682E0052DB25 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		0F71EE0723476E310052DB25 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
+		0F71EE0A234773040052DB25 /* NewMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageViewController.swift; sourceTree = "<group>"; };
+		0F7F6C702347868500AB8A69 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0F7F6C7423478DB200AB8A69 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		194B7992E63FE0F666E1E4DA /* Pods-FirebaseChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChatApp.release.xcconfig"; path = "Target Support Files/Pods-FirebaseChatApp/Pods-FirebaseChatApp.release.xcconfig"; sourceTree = "<group>"; };
 		2C24693BA5685D7E16604A53 /* Pods-FirebaseChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChatApp.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseChatApp/Pods-FirebaseChatApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BF5E54FB49EE57244F1DE497 /* Pods_FirebaseChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,15 +75,15 @@
 		0F3615F0234632C200EEFCC4 /* FirebaseChatApp */ = {
 			isa = PBXGroup;
 			children = (
-				0F71EE04234768190052DB25 /* Extensions */,
-				0F3616052346375B00EEFCC4 /* ViewControllers */,
 				0F3615F1234632C200EEFCC4 /* AppDelegate.swift */,
-				0F3615F5234632C200EEFCC4 /* MessagesViewController.swift */,
+				0F3616052346375B00EEFCC4 /* ViewControllers */,
+				0F7F6C6F2347865900AB8A69 /* Model */,
+				0F71EE0D2347732A0052DB25 /* Helpers */,
+				0F71EE04234768190052DB25 /* Extensions */,
 				0F3615FA234632C300EEFCC4 /* Assets.xcassets */,
 				0F3615FC234632C300EEFCC4 /* LaunchScreen.storyboard */,
 				0F3615FF234632C300EEFCC4 /* Info.plist */,
 				0F36160F23467D8100EEFCC4 /* GoogleService-Info.plist */,
-				0F71EE0723476E310052DB25 /* FirebaseHelper.swift */,
 			);
 			path = FirebaseChatApp;
 			sourceTree = "<group>";
@@ -85,6 +91,9 @@
 		0F3616052346375B00EEFCC4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0F7F6C7323478CFE00AB8A69 /* ChatViewController */,
+				0F71EE0C2347731D0052DB25 /* MessagesViewController */,
+				0F71EE09234771440052DB25 /* NewMessageViewController */,
 				0F36160A2346382C00EEFCC4 /* LoginViewController */,
 			);
 			path = ViewControllers;
@@ -105,6 +114,46 @@
 				0F71EE052347682E0052DB25 /* UIViewController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0F71EE09234771440052DB25 /* NewMessageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0F71EE0A234773040052DB25 /* NewMessageViewController.swift */,
+			);
+			path = NewMessageViewController;
+			sourceTree = "<group>";
+		};
+		0F71EE0C2347731D0052DB25 /* MessagesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0F3615F5234632C200EEFCC4 /* MessagesViewController.swift */,
+			);
+			path = MessagesViewController;
+			sourceTree = "<group>";
+		};
+		0F71EE0D2347732A0052DB25 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0F71EE0723476E310052DB25 /* FirebaseHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0F7F6C6F2347865900AB8A69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0F7F6C702347868500AB8A69 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0F7F6C7323478CFE00AB8A69 /* ChatViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0F7F6C7423478DB200AB8A69 /* ChatViewController.swift */,
+			);
+			path = ChatViewController;
 			sourceTree = "<group>";
 		};
 		1F65EA1287A84C5295DCC764 /* Frameworks */ = {
@@ -241,10 +290,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F36160D2346411400EEFCC4 /* LoginViewController.swift in Sources */,
+				0F71EE0B234773040052DB25 /* NewMessageViewController.swift in Sources */,
+				0F7F6C7523478DB200AB8A69 /* ChatViewController.swift in Sources */,
 				0F3615F6234632C200EEFCC4 /* MessagesViewController.swift in Sources */,
 				0F71EE062347682E0052DB25 /* UIViewController.swift in Sources */,
 				0F3615F2234632C200EEFCC4 /* AppDelegate.swift in Sources */,
 				0F71EE0823476E310052DB25 /* FirebaseHelper.swift in Sources */,
+				0F7F6C712347868500AB8A69 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
