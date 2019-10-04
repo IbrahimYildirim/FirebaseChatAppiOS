@@ -8,25 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		0F3615F2234632C200EEFCC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3615F1234632C200EEFCC4 /* AppDelegate.swift */; };
-		0F3615F6234632C200EEFCC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3615F5234632C200EEFCC4 /* ViewController.swift */; };
+		0F3615F6234632C200EEFCC4 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3615F5234632C200EEFCC4 /* MessagesViewController.swift */; };
 		0F3615FB234632C300EEFCC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F3615FA234632C300EEFCC4 /* Assets.xcassets */; };
 		0F3615FE234632C300EEFCC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F3615FC234632C300EEFCC4 /* LaunchScreen.storyboard */; };
 		0F36160D2346411400EEFCC4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F36160B2346411400EEFCC4 /* LoginViewController.swift */; };
 		0F36160E2346411400EEFCC4 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F36160C2346411400EEFCC4 /* LoginViewController.xib */; };
 		0F36161023467D8100EEFCC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F36160F23467D8100EEFCC4 /* GoogleService-Info.plist */; };
+		0F71EE062347682E0052DB25 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EE052347682E0052DB25 /* UIViewController.swift */; };
+		0F71EE0823476E310052DB25 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EE0723476E310052DB25 /* FirebaseHelper.swift */; };
 		28BF37869C2646DCE692B958 /* Pods_FirebaseChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5E54FB49EE57244F1DE497 /* Pods_FirebaseChatApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0F3615EE234632C200EEFCC4 /* FirebaseChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F3615F1234632C200EEFCC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0F3615F5234632C200EEFCC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0F3615F5234632C200EEFCC4 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		0F3615FA234632C300EEFCC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F3615FD234632C300EEFCC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F3615FF234632C300EEFCC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F36160B2346411400EEFCC4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0F36160C2346411400EEFCC4 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		0F36160F23467D8100EEFCC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0F71EE052347682E0052DB25 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		0F71EE0723476E310052DB25 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		194B7992E63FE0F666E1E4DA /* Pods-FirebaseChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChatApp.release.xcconfig"; path = "Target Support Files/Pods-FirebaseChatApp/Pods-FirebaseChatApp.release.xcconfig"; sourceTree = "<group>"; };
 		2C24693BA5685D7E16604A53 /* Pods-FirebaseChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChatApp.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseChatApp/Pods-FirebaseChatApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BF5E54FB49EE57244F1DE497 /* Pods_FirebaseChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,13 +69,15 @@
 		0F3615F0234632C200EEFCC4 /* FirebaseChatApp */ = {
 			isa = PBXGroup;
 			children = (
+				0F71EE04234768190052DB25 /* Extensions */,
 				0F3616052346375B00EEFCC4 /* ViewControllers */,
 				0F3615F1234632C200EEFCC4 /* AppDelegate.swift */,
-				0F3615F5234632C200EEFCC4 /* ViewController.swift */,
+				0F3615F5234632C200EEFCC4 /* MessagesViewController.swift */,
 				0F3615FA234632C300EEFCC4 /* Assets.xcassets */,
 				0F3615FC234632C300EEFCC4 /* LaunchScreen.storyboard */,
 				0F3615FF234632C300EEFCC4 /* Info.plist */,
 				0F36160F23467D8100EEFCC4 /* GoogleService-Info.plist */,
+				0F71EE0723476E310052DB25 /* FirebaseHelper.swift */,
 			);
 			path = FirebaseChatApp;
 			sourceTree = "<group>";
@@ -91,6 +97,14 @@
 				0F36160C2346411400EEFCC4 /* LoginViewController.xib */,
 			);
 			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		0F71EE04234768190052DB25 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0F71EE052347682E0052DB25 /* UIViewController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		1F65EA1287A84C5295DCC764 /* Frameworks */ = {
@@ -227,8 +241,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F36160D2346411400EEFCC4 /* LoginViewController.swift in Sources */,
-				0F3615F6234632C200EEFCC4 /* ViewController.swift in Sources */,
+				0F3615F6234632C200EEFCC4 /* MessagesViewController.swift in Sources */,
+				0F71EE062347682E0052DB25 /* UIViewController.swift in Sources */,
 				0F3615F2234632C200EEFCC4 /* AppDelegate.swift in Sources */,
+				0F71EE0823476E310052DB25 /* FirebaseHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
