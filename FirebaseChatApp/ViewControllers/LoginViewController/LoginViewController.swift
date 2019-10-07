@@ -87,7 +87,7 @@ class LoginViewController: UIViewController {
             }
             
             guard let userUid = result?.user.uid else {
-                self.showSimpleAlert(message: "Could not save username to database")
+                self.showSimpleAlert(message: "Could not save user to database..")
                 return
             }
             
@@ -99,7 +99,7 @@ class LoginViewController: UIViewController {
                 if let error = err {
                     //Error saving username to db
                     //Does not check before a user is created whether the username exists.
-                    print(error)
+                    print(error.localizedDescription)
                     return
                 }
                 

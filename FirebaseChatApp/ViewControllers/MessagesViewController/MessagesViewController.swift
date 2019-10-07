@@ -38,11 +38,9 @@ class MessagesViewController: UITableViewController {
             
             //Retrive user and set title
             Database.database().reference().child(FirebaseRef.users).child(uid).observeSingleEvent(of: .value, with: { snapshot in
-//                print(snapshot)
                 if let dictionary = snapshot.value as? [String : Any] {
                     self.navigationItem.title = dictionary[FirebaseRef.UserRef.name] as? String
                     self.clearTableView()
-                    
                     self.obserUserMessages()
                 }
             }, withCancel: nil)

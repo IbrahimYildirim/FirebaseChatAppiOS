@@ -29,7 +29,6 @@ class SelectUserViewController: UITableViewController {
         }
         
         Database.database().reference().child(FirebaseRef.users).observe(.childAdded) { snapshot in
-            
             if let dictionary = snapshot.value as? [String : Any] {
                 if userUid != snapshot.key {
                     let user = User()
@@ -41,7 +40,6 @@ class SelectUserViewController: UITableViewController {
                         self.tableView.reloadData()
                     }
                 }
-//                print(user.name, user.email)
             }
         }
     }
