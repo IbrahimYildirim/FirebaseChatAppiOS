@@ -11,8 +11,8 @@ import Firebase
 
 class MessagesViewController: UITableViewController {
 
-    var messages = [Message]()
     var messageDict = [String: Message]()
+    var messages = [Message]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,22 +60,20 @@ class MessagesViewController: UITableViewController {
             let messageId = snapshot.key
             let messageRef = Database.database().reference().child(FirebaseRef.messages).child(messageId)
             
-            messageRef.observe(.value) { snapshot in
+            messageRef.observeSingleEvent(of: .value) { snapshot in
                     if let dictionary = snapshot.value as? [String : Any] {
-                    let message = Message()
-                    message.setValuesForKeys(dictionary)
-                    
-                    if let toId = message.chatPartnerId() {
-                        self.messageDict[toId] = message
-                        self.messages = Array(self.messageDict.values)
-                        self.messages.sort { m1, m2 -> Bool in
-                            return m1.timestamp!.intValue > m2.timestamp!.intValue
+                        let message = Message()
+                        message.setValuesForKeys(dictionary)
+                        print(snapshot)
+                        
+                        if let toId = message.chatPartnerId() {
+                            self.messageDict[toId] = message
+                            self.messages = Array(self.messageDict.values)
+                            self.messages.sort { $0.timestamp!.intValue > $1.timestamp!.intValue }
                         }
-                    }
-
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
                 }
             }
         }

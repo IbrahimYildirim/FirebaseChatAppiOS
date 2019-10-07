@@ -31,7 +31,9 @@ class MessageTableViewCell: UITableViewCell {
             ref.observe(.value) { snapshot in
                 print(snapshot)
                 if let dict = snapshot.value as? [String : Any] {
-                    self.txtUserName?.text = dict[FirebaseRef.UserRef.name] as? String
+                    DispatchQueue.main.async {
+                        self.txtUserName?.text = dict[FirebaseRef.UserRef.name] as? String
+                    }
                 }
             }
         }

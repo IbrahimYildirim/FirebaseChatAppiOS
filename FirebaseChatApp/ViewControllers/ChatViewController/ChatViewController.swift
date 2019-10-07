@@ -48,9 +48,11 @@ class ChatViewController: UIViewController, UITextFieldDelegate {
                 }
                 let message = Message()
                 message.setValuesForKeys(dict)
-                self.messages.append(message)
                 
-                self.updateTableAndScroolToBottom()
+                if message.chatPartnerId() == self.user.id {
+                    self.messages.append(message)
+                    self.updateTableAndScroolToBottom()
+                }
             }
         }
     }
