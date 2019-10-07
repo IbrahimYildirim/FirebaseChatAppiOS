@@ -19,6 +19,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var sgmtSignInMode: UISegmentedControl!
     
+    var messagesController: MessagesViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -71,6 +73,7 @@ class LoginViewController: UIViewController {
             
             //Succesfully Authenticated User
             print("User Authenticated")
+            self.messagesController?.fetchUserIfLoggedIn()
             self.dismiss(animated: true, completion: nil)
         }
     }
@@ -101,6 +104,7 @@ class LoginViewController: UIViewController {
                 }
                 
                 print("Saved User Succesfully into Firebase DB")
+                self.messagesController?.fetchUserIfLoggedIn()
                 self.dismiss(animated: true, completion: nil)
             }
         }

@@ -19,52 +19,35 @@ class MessagesViewController: UITableViewController {
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutClicked))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(newMessageClicked))
-        
-        checkIfUserIsLoggedIn()
-//        observeMessages()
-        obserUserMessages()
-
-        setupTableView()
-    }
-    
-    func setupTableView() {
         tableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: MessageTableViewCell.cellId)
         tableView.rowHeight = 60
+        
+        fetchUserIfLoggedIn()
+    }
+
+    func clearTableView() {
+        DispatchQueue.main.async {
+            self.messages.removeAll()
+            self.messageDict.removeAll()
+            self.tableView.reloadData()
+        }
     }
     
-    func checkIfUserIsLoggedIn() {
+    func fetchUserIfLoggedIn() {
         if let uid = Auth.auth().currentUser?.uid {
-            //Retrive user and set as title
+            
+            //Retrive user and set title
             Database.database().reference().child(FirebaseRef.users).child(uid).observeSingleEvent(of: .value, with: { snapshot in
 //                print(snapshot)
                 if let dictionary = snapshot.value as? [String : Any] {
                     self.navigationItem.title = dictionary[FirebaseRef.UserRef.name] as? String
+                    self.clearTableView()
+                    
+                    self.obserUserMessages()
                 }
             }, withCancel: nil)
         } else {
             logoutClicked()
-        }
-    }
-    
-    func observeMessages() {
-        let ref = Database.database().reference().child(FirebaseRef.messages)
-        ref.observe(.childAdded) { snapshot in
-            if let dictionary = snapshot.value as? [String : Any] {
-                let message = Message()
-                message.setValuesForKeys(dictionary)
-                
-                if let toId = message.toId {
-                    self.messageDict[toId] = message
-                    self.messages = Array(self.messageDict.values)
-                    self.messages.sort { m1, m2 -> Bool in
-                        return m1.timestamp!.intValue > m2.timestamp!.intValue
-                    }
-                }
-
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            }
         }
     }
     
@@ -84,7 +67,7 @@ class MessagesViewController: UITableViewController {
                     let message = Message()
                     message.setValuesForKeys(dictionary)
                     
-                    if let toId = message.toId {
+                    if let toId = message.chatPartnerId() {
                         self.messageDict[toId] = message
                         self.messages = Array(self.messageDict.values)
                         self.messages.sort { m1, m2 -> Bool in
@@ -110,6 +93,7 @@ class MessagesViewController: UITableViewController {
         self.navigationItem.title = ""
 
         let loginController = LoginViewController()
+        loginController.messagesController = self
         if #available(iOS 13.0, *) {
             loginController.isModalInPresentation = true
         }
@@ -146,5 +130,26 @@ class MessagesViewController: UITableViewController {
         cell.message = message
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let message = messages[indexPath.row]
+        
+        guard let chatPartnerId = message.chatPartnerId() else {
+            return
+        }
+        
+        let ref = Database.database().reference().child(FirebaseRef.users).child(chatPartnerId)
+        ref.observe(.value) { snapshot in
+            if let dict = snapshot.value as? [String: Any] {
+                let user = User()
+                user.id = chatPartnerId
+                user.setValuesForKeys(dict)
+                
+                DispatchQueue.main.async {
+                    self.showChatView(withUser: user)
+                }
+            }
+        }
     }
 }

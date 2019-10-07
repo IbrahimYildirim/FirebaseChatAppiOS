@@ -19,23 +19,28 @@ class MessageTableViewCell: UITableViewCell {
     
     var message: Message? {
         didSet {
-            if let toId = message?.toId {
-                let ref = Database.database().reference().child(FirebaseRef.users).child(toId)
-                ref.observe(.value) { snapshot in
-//                    print(snapshot)
-                    if let dict = snapshot.value as? [String : Any] {
-                        self.txtUserName?.text = dict[FirebaseRef.UserRef.name] as? String
-                    }
+            self.setupNameAndTime()
+            self.txtMessage.text = message?.text
+        }
+    }
+    
+    private func setupNameAndTime() {
+
+        if let id = message?.chatPartnerId() {
+            let ref = Database.database().reference().child(FirebaseRef.users).child(id)
+            ref.observe(.value) { snapshot in
+                print(snapshot)
+                if let dict = snapshot.value as? [String : Any] {
+                    self.txtUserName?.text = dict[FirebaseRef.UserRef.name] as? String
                 }
             }
-            
-            if let seconds = message?.timestamp?.doubleValue  {
-                let timestamp = Date(timeIntervalSince1970: seconds)
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "HH:mm"
-                self.txtTimestamp.text = dateFormatter.string(from: timestamp as Date)
-            }
-            self.txtMessage.text = message?.text
+        }
+        
+        if let seconds = message?.timestamp?.doubleValue  {
+            let timestamp = Date(timeIntervalSince1970: seconds)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            self.txtTimestamp.text = dateFormatter.string(from: timestamp as Date)
         }
     }
     

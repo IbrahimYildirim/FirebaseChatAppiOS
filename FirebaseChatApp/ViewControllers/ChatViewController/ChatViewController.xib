@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatViewController" customModule="FirebaseChatApp" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="RFQ-XE-inK" id="yeN-x4-iiu"/>
                 <outlet property="txtMessage" destination="TRO-sj-FTe" id="rhp-g1-tlZ"/>
                 <outlet property="view" destination="iN0-l3-epB" id="3yF-fL-czF"/>
             </connections>
@@ -19,6 +20,13 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RFQ-XE-inK">
+                    <rect key="frame" x="0.0" y="44" width="414" height="768"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Ye2-Ik-NzW"/>
+                    </connections>
+                </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MWv-LR-LVQ" userLabel="Container">
                     <rect key="frame" x="0.0" y="812" width="414" height="50"/>
                     <subviews>
@@ -39,7 +47,7 @@
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qO1-sn-aOY" userLabel="Seperator">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
-                            <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" systemColor="separatorColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="Tc7-wu-qa3"/>
                             </constraints>
@@ -64,8 +72,12 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="MWv-LR-LVQ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="7wc-aq-3yH"/>
+                <constraint firstItem="RFQ-XE-inK" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="9hO-Pw-IHt"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MWv-LR-LVQ" secondAttribute="trailing" id="M96-xQ-JD5"/>
+                <constraint firstItem="MWv-LR-LVQ" firstAttribute="top" secondItem="RFQ-XE-inK" secondAttribute="bottom" id="ee6-K1-Gsq"/>
                 <constraint firstItem="MWv-LR-LVQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="hyl-OP-szF"/>
+                <constraint firstItem="RFQ-XE-inK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" constant="-20" id="knw-za-Qdm"/>
+                <constraint firstAttribute="trailingMargin" secondItem="RFQ-XE-inK" secondAttribute="trailing" constant="-20" id="mAh-VJ-pj3"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="137.68115942028987" y="110.49107142857143"/>

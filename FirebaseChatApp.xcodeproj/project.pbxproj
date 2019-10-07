@@ -23,6 +23,8 @@
 		0F7F6C712347868500AB8A69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F6C702347868500AB8A69 /* User.swift */; };
 		0F7F6C7523478DB200AB8A69 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F6C7423478DB200AB8A69 /* ChatViewController.swift */; };
 		0F7F6C772347900400AB8A69 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F7F6C762347900400AB8A69 /* ChatViewController.xib */; };
+		0FAEF2D8234B5284006B6A89 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAEF2D6234B5284006B6A89 /* ChatTableViewCell.swift */; };
+		0FAEF2D9234B5284006B6A89 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FAEF2D7234B5284006B6A89 /* ChatTableViewCell.xib */; };
 		28BF37869C2646DCE692B958 /* Pods_FirebaseChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5E54FB49EE57244F1DE497 /* Pods_FirebaseChatApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		0F7F6C702347868500AB8A69 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0F7F6C7423478DB200AB8A69 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		0F7F6C762347900400AB8A69 /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		0FAEF2D6234B5284006B6A89 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		0FAEF2D7234B5284006B6A89 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		194B7992E63FE0F666E1E4DA /* Pods-FirebaseChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChatApp.release.xcconfig"; path = "Target Support Files/Pods-FirebaseChatApp/Pods-FirebaseChatApp.release.xcconfig"; sourceTree = "<group>"; };
 		2C24693BA5685D7E16604A53 /* Pods-FirebaseChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChatApp.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseChatApp/Pods-FirebaseChatApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BF5E54FB49EE57244F1DE497 /* Pods_FirebaseChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,10 +174,20 @@
 		0F7F6C7323478CFE00AB8A69 /* ChatViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0FAEF2D5234B5272006B6A89 /* ChatTableViewCell */,
 				0F7F6C7423478DB200AB8A69 /* ChatViewController.swift */,
 				0F7F6C762347900400AB8A69 /* ChatViewController.xib */,
 			);
 			path = ChatViewController;
+			sourceTree = "<group>";
+		};
+		0FAEF2D5234B5272006B6A89 /* ChatTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0FAEF2D6234B5284006B6A89 /* ChatTableViewCell.swift */,
+				0FAEF2D7234B5284006B6A89 /* ChatTableViewCell.xib */,
+			);
+			path = ChatTableViewCell;
 			sourceTree = "<group>";
 		};
 		1F65EA1287A84C5295DCC764 /* Frameworks */ = {
@@ -258,6 +272,7 @@
 				0F3615FE234632C300EEFCC4 /* LaunchScreen.storyboard in Resources */,
 				0F36161023467D8100EEFCC4 /* GoogleService-Info.plist in Resources */,
 				0F7F6C772347900400AB8A69 /* ChatViewController.xib in Resources */,
+				0FAEF2D9234B5284006B6A89 /* ChatTableViewCell.xib in Resources */,
 				0F3615FB234632C300EEFCC4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +331,7 @@
 				0F7F6C7523478DB200AB8A69 /* ChatViewController.swift in Sources */,
 				0F0D9576234B32340029C38D /* MessageTableViewCell.swift in Sources */,
 				0F0D956E23479D570029C38D /* Message.swift in Sources */,
+				0FAEF2D8234B5284006B6A89 /* ChatTableViewCell.swift in Sources */,
 				0F3615F6234632C200EEFCC4 /* MessagesViewController.swift in Sources */,
 				0F71EE062347682E0052DB25 /* UIViewController.swift in Sources */,
 				0F3615F2234632C200EEFCC4 /* AppDelegate.swift in Sources */,
