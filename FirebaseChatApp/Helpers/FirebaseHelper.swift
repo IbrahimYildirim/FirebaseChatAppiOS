@@ -8,16 +8,23 @@
 
 import Foundation
 
-struct FirebaseConstants {
+struct FirebaseRef {
     
-    static let urlPath = "https://hocfirebasechat.firebaseio.com/"
-
-    struct References {
-        static let users = "users"
-    }
+    static let users = "users"
+    static let messages = "messages"
+    static let userMessages = "user-messages"
     
-    struct UserValues {
+    struct UserRef {
         static let email = "email"
         static let name = "name"
     }
+    
+    struct MessageRef {
+        static let text = "text"
+        static let toId = "toId"
+        static let fromId = "fromId"
+        static let timestamp = "timestamp"
+    }
+    
 }
+

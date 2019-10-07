@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatViewController" customModule="FirebaseChatApp" customModuleProvider="target">
+            <connections>
+                <outlet property="txtMessage" destination="TRO-sj-FTe" id="rhp-g1-tlZ"/>
+                <outlet property="view" destination="iN0-l3-epB" id="3yF-fL-czF"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MWv-LR-LVQ" userLabel="Container">
+                    <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9f-gu-Z83">
+                            <rect key="frame" x="344" y="0.0" width="70" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="vIL-fz-IkX"/>
+                            </constraints>
+                            <state key="normal" title="Send"/>
+                            <connections>
+                                <action selector="sendMessageClicked:" destination="-1" eventType="touchUpInside" id="beo-YL-5IH"/>
+                            </connections>
+                        </button>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TRO-sj-FTe">
+                            <rect key="frame" x="8" y="8" width="336" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qO1-sn-aOY" userLabel="Seperator">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
+                            <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="Tc7-wu-qa3"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="I9f-gu-Z83" secondAttribute="bottom" id="2sN-EJ-MGz"/>
+                        <constraint firstItem="qO1-sn-aOY" firstAttribute="leading" secondItem="MWv-LR-LVQ" secondAttribute="leading" id="4Et-4P-HQW"/>
+                        <constraint firstAttribute="trailing" secondItem="qO1-sn-aOY" secondAttribute="trailing" id="53w-Rr-hhO"/>
+                        <constraint firstAttribute="trailing" secondItem="I9f-gu-Z83" secondAttribute="trailing" id="5Ap-yL-pcC"/>
+                        <constraint firstItem="TRO-sj-FTe" firstAttribute="leading" secondItem="MWv-LR-LVQ" secondAttribute="leading" constant="8" id="5Ro-XA-amV"/>
+                        <constraint firstItem="TRO-sj-FTe" firstAttribute="top" secondItem="MWv-LR-LVQ" secondAttribute="top" constant="8" id="XLE-Rw-lrQ"/>
+                        <constraint firstItem="I9f-gu-Z83" firstAttribute="leading" secondItem="TRO-sj-FTe" secondAttribute="trailing" id="bbU-4W-PXQ"/>
+                        <constraint firstItem="qO1-sn-aOY" firstAttribute="top" secondItem="MWv-LR-LVQ" secondAttribute="top" id="hUz-C4-6PE"/>
+                        <constraint firstAttribute="height" constant="50" id="nYN-CX-t2Y"/>
+                        <constraint firstAttribute="bottom" secondItem="TRO-sj-FTe" secondAttribute="bottom" constant="8" id="nwe-BE-tIH"/>
+                        <constraint firstItem="I9f-gu-Z83" firstAttribute="top" secondItem="MWv-LR-LVQ" secondAttribute="top" id="p34-jx-RqQ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="MWv-LR-LVQ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="7wc-aq-3yH"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MWv-LR-LVQ" secondAttribute="trailing" id="M96-xQ-JD5"/>
+                <constraint firstItem="MWv-LR-LVQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="hyl-OP-szF"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="110.49107142857143"/>
+        </view>
+    </objects>
+</document>

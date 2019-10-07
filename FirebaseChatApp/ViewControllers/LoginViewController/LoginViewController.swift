@@ -89,9 +89,9 @@ class LoginViewController: UIViewController {
             }
             
             //Save username to user
-            let ref = Database.database().reference(fromURL: FirebaseConstants.urlPath)
-            let userRef = ref.child(FirebaseConstants.References.users).child(userUid)
-            let values = [FirebaseConstants.UserValues.name : username, FirebaseConstants.UserValues.email : email]
+            let ref = Database.database().reference()
+            let userRef = ref.child(FirebaseRef.users).child(userUid)
+            let values = [FirebaseRef.UserRef.name : username, FirebaseRef.UserRef.email : email]
             userRef.updateChildValues(values) { err, ref in
                 if let error = err {
                     //Error saving username to db
